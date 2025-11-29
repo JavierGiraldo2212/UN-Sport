@@ -20,7 +20,7 @@ public class SecurityConfig {
             // Configuramos quién puede entrar a dónde
             .authorizeHttpRequests(auth -> auth
                 // Permitir acceso a test Y a profiles (solo por ahora, para probar)
-                .requestMatchers("/api/test/**", "/api/profiles/**").permitAll()
+                .requestMatchers("/api/test/**", "/api/profiles/**", "/api/announcements/**").permitAll()
                 
                 // Cualquier otra petición requiere estar autenticado
                 .anyRequest().authenticated()
